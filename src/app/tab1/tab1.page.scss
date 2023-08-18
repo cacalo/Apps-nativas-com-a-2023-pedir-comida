@@ -1,5 +1,4 @@
 h1{
-    background-color: red;
 }
 
 
@@ -8,11 +7,13 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
     a{
+        font-weight: bold;
         margin: 10px 10px;
         padding: 60px 20px;
         text-align: center;
         border-radius: 10px ;
-        background-color: red;
         color: white;
+        background-size: cover;
+        background-position: center;
     }
 }
