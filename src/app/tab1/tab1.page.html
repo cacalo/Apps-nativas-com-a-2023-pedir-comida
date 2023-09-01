@@ -12,6 +12,7 @@
     <a
     *ngFor="let item of categorias"
     [ngStyle]="{'background-image':'url('+item.imgUrl+')'}"
+    [routerLink]="['/categorias',item.id]"  
     >{{item.nombre}}</a>
   </section>
 
