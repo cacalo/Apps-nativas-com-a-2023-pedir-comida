@@ -13,7 +13,7 @@
 
   <p>Categoría</p>
 
-  <ion-card *ngFor="let item of categoriaActual.productos">
+  <ion-card *ngFor="let item of categoriaActual.productos" [routerLink]="['/productos',item.id]" >
     <img alt="{{item.nombre}}" src="{{item.imagen}}" />x
     <ion-card-header>
       <ion-card-title>{{item.nombre}}</ion-card-title>

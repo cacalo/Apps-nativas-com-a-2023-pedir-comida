@@ -6,18 +6,21 @@ export const CATEGORIAS: Categoria[] = [
         id: 250,
         imgUrl: 'https://osojimix.com/wp-content/uploads/2021/04/hamburguesa.jpg',
         productos: [{
+            id: 1,
             nombre: 'Hamburguesa 1',
             precio: 2220,
             ingredientes: [],
             imagen: 'https://recetinas.com/wp-content/uploads/2023/03/Hamburguesa-con-pan-negro.jpg'
         },
         {
+            id: 2,
             nombre: 'Hamburguesa 2',
             precio: 3330,
-            ingredientes: [],
+            ingredientes: ['Tomate','Lechuga'],
             imagen: 'https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_muqvn0kg1s_e8a3509-1024x683.jpg.webp'
         },
         {
+            id: 3,
             nombre: 'Hamburguesa 3',
             precio: 44440,
             ingredientes: [],
