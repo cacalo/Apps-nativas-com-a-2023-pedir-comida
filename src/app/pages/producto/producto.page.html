@@ -13,5 +13,5 @@
   <img src="{{producto.imagen}}" alt="">
   <p>{{producto.ingredientes}}</p>
   <p>${{producto.precio}}</p>
-  <ion-button fill="clear" shape="round" expand="block">Agregar al carrito</ion-button>
+  <ion-button fill="clear" shape="round" expand="block" (click)="onAgregarAlCarritoClicked()">Agregar al carrito</ion-button>
 </ion-content>
