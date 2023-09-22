@@ -22,8 +22,9 @@ export class CarritoService {
     this.actualizarLocalstorage();
   }
 
-  eliminarProducto(){
-    this.actualizarLocalstorage();
+  eliminarProducto(id:number){
+    this.carrito = this.carrito.filter(item => item.producto.id !== id);
+    this.actualizarLocalstorage(); 
   }
 
   limpiarCarrito(){
