@@ -50,4 +50,19 @@ export class CarritoService {
     })
   }
 
+  generarMensaje(){
+    const primeraParte = "https://wa.me/+5412345678?text=";
+    let parteProductos = ''
+    this.carrito.forEach(itemCarrito => {
+      parteProductos += `* ${itemCarrito.producto.nombre} - ${itemCarrito.cantidad}`
+    });
+    const ultimaParte = `Se realizó el siguiente pedido:
+    Productos:
+    ${parteProductos}
+    Total: $${this.totalCarrito}
+    Dirección de envío: DIRECCION DE EJEMPLO`;
+    return encodeURI(primeraParte+ultimaParte);
+  }
+
+
 }

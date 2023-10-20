@@ -34,6 +34,7 @@
   </ion-card>
   <p *ngIf="!carritoService.carrito.length">Tu carrito está vacío, <a [routerLink]="['/tabs/tab1']">agregá algun producto</a></p>
   <p *ngIf="carritoService.carrito.length">Total: ${{carritoService.totalCarrito}}</p>
-  <ion-button fill="clear">Comprar</ion-button>
+  <!-- <ion-button fill="clear">Comprar</ion-button> -->
+  <a href="{{carritoService.generarMensaje()}}" target="_blank">Comprar</a>
   <ion-button fill="clear" (click)="carritoService.limpiarCarrito()">Limpiar carrito</ion-button>
 </ion-content>
