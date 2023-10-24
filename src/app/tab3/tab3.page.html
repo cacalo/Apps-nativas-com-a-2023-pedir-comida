@@ -15,7 +15,7 @@
 
   <ion-card *ngIf="carritoService.carrito.length">
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-title>Productos</ion-card-title>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
@@ -33,9 +33,18 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <p *ngIf="!carritoService.carrito.length">Tu carrito está vacío, <a [routerLink]="['/tabs/tab1']">agregá algun producto</a></p>
-  <p *ngIf="carritoService.carrito.length">Total: ${{carritoService.totalCarrito}}</p>
-  <!-- <ion-button fill="clear">Comprar</ion-button> -->
-  <a href="{{carritoService.generarMensaje()}}" target="_blank">Comprar</a>
-  <ion-button fill="clear" (click)="carritoService.limpiarCarrito()">Limpiar carrito</ion-button>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title *ngIf="!carritoService.carrito.length">
+        Tu carrito está vacío, <a [routerLink]="['/tabs/tab1']">agregá algun producto</a>
+      </ion-card-title>
+      <ng-container *ngIf="carritoService.carrito.length">
+      <ion-card-title>
+        Total: ${{carritoService.totalCarrito}}
+      </ion-card-title>
+      <ion-button fill="clear" href="{{carritoService.generarMensaje()}}" target="_blank">Comprar</ion-button>
+      <ion-button fill="clear" (click)="carritoService.limpiarCarrito()">Limpiar carrito</ion-button>
+    </ng-container>
+</ion-card-content>
+</ion-card>
 </ion-content>

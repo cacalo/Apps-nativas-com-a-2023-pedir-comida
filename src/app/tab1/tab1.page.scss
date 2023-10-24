@@ -1,12 +1,10 @@
-h1{
-}
-
-
 #categorias-container{
-    margin-top: 40%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     a{
+      min-width: 150px;
+      flex: 1;
         font-weight: bold;
         margin: 10px 10px;
         padding: 60px 20px;
