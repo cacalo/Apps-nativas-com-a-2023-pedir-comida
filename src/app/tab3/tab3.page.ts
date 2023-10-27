@@ -8,10 +8,11 @@ import { CarritoService } from '../core/services/carrito.service';
 })
 export class Tab3Page {
 
-  constructor(
-    public carritoService: CarritoService
-  ) {
-
-  }
+  constructor(public carritoService: CarritoService) {}
+  
+    cambiarCantidad(cantidad:number, idProducto:number){
+      console.log(cantidad,idProducto)
+      this.carritoService.modificarCantidadProducto(idProducto,cantidad);
+    }
 
 }
