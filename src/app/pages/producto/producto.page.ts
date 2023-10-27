@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CATEGORIAS } from 'src/app/core/constants/categorias';
 import { Producto } from 'src/app/core/interfaces/productos';
 import { CarritoService } from 'src/app/core/services/carrito.service';
@@ -10,6 +10,7 @@ import { CarritoService } from 'src/app/core/services/carrito.service';
   styleUrls: ['./producto.page.scss'],
 })
 export class ProductoPage{
+  router = inject(Router)
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,9 +33,12 @@ export class ProductoPage{
     imagen: ''
   }
 
+  cantidad=1;
+
   onAgregarAlCarritoClicked(){
-    this.carritoService.agregarProducto(this.producto)
+    this.carritoService.agregarProducto(this.producto,this.cantidad);
     console.log(this.carritoService.carrito);
+    this.router.navigate(['tabs/tab1']);
   }
 
 }

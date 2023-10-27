@@ -18,10 +18,10 @@ export class CarritoService {
   carrito:Carrito[] = []
   totalCarrito: number = 0;
 
-  agregarProducto(producto:Producto){
+  agregarProducto(producto:Producto, cantidad:number){
     this.carrito.push({
       producto: producto,
-      cantidad: 1
+      cantidad: cantidad
     });
     this.actualizarLocalstorage();
     this.calcularTotal();
